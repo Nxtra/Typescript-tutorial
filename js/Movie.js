@@ -14,12 +14,14 @@ var __extends = (this && this.__extends) || (function () {
 var Movie = /** @class */ (function (_super) {
     __extends(Movie, _super);
     function Movie(title, genre, description, age, name) {
-        return _super.call(this, title, genre, description) || this;
+        var _this = _super.call(this, title, genre, description) || this;
+        _this.age = age;
+        _this.name = name;
+        return _this;
     }
     Movie.prototype.render = function (element) {
         var article = document.createElement("article");
-        var text = this.name + ", " + this.age + ", " + this.genre + ", " + this.description;
-        article.innerText = text;
+        article.innerHTML = "<h2>" + this.name + "</h2><h2>" + this.age + "</h2><h2>" + this.genre + "</h2><h2>" + this.description + "</h2>";
         element.appendChild(article);
     };
     return Movie;

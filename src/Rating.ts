@@ -1,6 +1,4 @@
-interface Rating {
-
-    age: number;
-    name: string;
-
+interface Rating{
+    age:number;
+    name:string;
 }

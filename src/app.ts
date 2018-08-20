@@ -1,2 +1,2 @@
-let library = new Library();
+let library:Library = new Library();
 library.publishItems();

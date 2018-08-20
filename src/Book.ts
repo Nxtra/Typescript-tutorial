@@ -1,4 +1,3 @@
-
 class Book extends Item {
 
     author:Author;

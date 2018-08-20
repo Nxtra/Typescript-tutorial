@@ -1,6 +1,6 @@
 var Library = /** @class */ (function () {
     function Library() {
-        this.items = new Array();
+        this.items = [];
         var matrix = new Movie("Matrix", "thriller", "tell em some", 16, "PG");
         var mobyDick = new Book("Moby Dick", new Author("Herman Malville"), "Drama", "About a big fish");
         this.items.push(matrix);

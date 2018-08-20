@@ -4,13 +4,13 @@ class Movie extends Item implements Rating{
 
     constructor(title: string, genre: string, description: string, age: number, name: string){
         super(title, genre, description)
+        this.age = age;
+        this.name = name;
     }
 
     render(element: HTMLElement) {
         let article: HTMLElement = document.createElement("article");
-        let text: string = `${this.name}, ${this.age}, ${this.genre}, ${this.description}`;
-        article.innerText = text;
-
+        article.innerHTML = `<h2>${this.name}</h2><h2>${this.age}</h2><h2>${this.genre}</h2><h2>${this.description}</h2>`;
         element.appendChild(article);
 
     }

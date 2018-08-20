@@ -1,5 +1,5 @@
 class Library {
-    items:Array<Item> = new Array();
+    items:Array<Item> = [];
 
     constructor(){
         let matrix  = new Movie("Matrix","thriller","tell em some",16,"PG");
