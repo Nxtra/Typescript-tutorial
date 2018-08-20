@@ -1,17 +1,12 @@
 
-let library:Library = new Library();
-library.publishItems();
-
-/*
  //activate when you finished exercise 3
 let jsonParser = new JSONParser();
 
-jsonParser.getJSON("items.json", data => {
-    
+jsonParser.getJSON("http://localhost:8080/db", data => {
+
     let library:Library = Library.fromJSON(data);
 
     var itemContainer: HTMLElement = document.getElementById("items");
-    library.getAll().forEach(item => item.render(itemContainer));
-    
+    library.getBooksAndMovies().forEach(item => item.render(itemContainer));
+
 });
-*/

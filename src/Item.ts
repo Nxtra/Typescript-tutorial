@@ -8,4 +8,5 @@ abstract class Item{
         this.description = description;
     }
     abstract render(element:HTMLElement):void
+
 }

@@ -1,7 +1,8 @@
 class Book extends Item {
 
     author:Author;
-    constructor(title:string,author:Author,genre:string,description:string){
+
+    constructor(title:string, author:Author, genre:string, description:string){
         super(title,genre,description)
         this.author = author;
     }
@@ -15,4 +16,10 @@ class Book extends Item {
 
         element.appendChild(article);
     }
+
+    static fromJson(json: any): Book {
+        return new Book(json.title, json.author, json.genre, json.description);
+    }
+
+
 }
