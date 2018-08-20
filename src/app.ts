@@ -1,7 +1,7 @@
 
 let jsonParser = new JSONParser();
 
-jsonParser.getJSON("items.json", data => {
+jsonParser.getJSON("http://localhost:8080/db", data => {
     let library:Library = Library.fromJSON(data);
 
     let itemContainer: HTMLElement = document.getElementById("items");
