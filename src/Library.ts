@@ -1,6 +1,8 @@
 class Library {
 
     items:Array<Item>;
+    // static books:Array<Book>;
+    // static movies:Array<Movie>;
 
     constructor(public books: Array<Book>,public movies:Array<Movie>){
 
@@ -21,6 +23,7 @@ class Library {
         let movie:  Movie = new Movie("default","default","default", 1,"default")
         this.items.push(movie);
         let itemContainer: HTMLElement = document.getElementById("items");
+        itemContainer.innerHTML="";
         this.items.forEach(movie => movie.render(itemContainer))
     }
 }

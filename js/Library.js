@@ -1,4 +1,6 @@
 var Library = /** @class */ (function () {
+    // static books:Array<Book>;
+    // static movies:Array<Movie>;
     function Library(books, movies) {
         this.books = books;
         this.movies = movies;
@@ -16,6 +18,7 @@ var Library = /** @class */ (function () {
         var movie = new Movie("default", "default", "default", 1, "default");
         this.items.push(movie);
         var itemContainer = document.getElementById("items");
+        itemContainer.innerHTML = "";
         this.items.forEach(function (movie) { return movie.render(itemContainer); });
     };
     return Library;
