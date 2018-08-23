@@ -16,4 +16,11 @@ class Library {
         this.items = (<Item[]>this.books).concat(this.movies);
         return this.items;
     }
+
+    addMovie(): void{
+        let movie:  Movie = new Movie("default","default","default", 1,"default")
+        this.items.push(movie);
+        let itemContainer: HTMLElement = document.getElementById("items");
+        this.items.forEach(movie => movie.render(itemContainer))
+    }
 }
