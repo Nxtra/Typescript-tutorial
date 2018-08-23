@@ -1,2 +1,5 @@
 .idea/*
 Ordina-JWorks-TypeScript.iml
+package.json
+package-lock.json
+node_modules/*
