@@ -1,7 +1,7 @@
 function printHelloName(person: string){
 
     let spanElement = document.getElementById("welcome-text");
-    spanElement.innerHTML = "Hello " + person + "!";
+    spanElement.innerHTML = "<h1>Hello " + person + "!</h1>";
 }
 
 let person = "Nick";
