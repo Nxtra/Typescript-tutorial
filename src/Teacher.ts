@@ -1,20 +1,41 @@
 class Teacher extends Person{
 
-    private course: Course;
+    private _course: Course;
 
-    constructor(name:string, course: Course){
-        super(name);
-        this.course = course;
+    constructor(name: string, id: number, course: Course){
+        super(name, id);
+        this._course = course;
     }
 
-    getAllStudentsInMyCourse(): Array<Student>
-    getCourse(): Course{
-        return this.course;
+    get course(): Course {
+        return this._course;
     }
 
-    setCourse(course: Course): void{
-        this.course = course;
+    set course(value: Course) {
+        this._course = value;
     }
+
+    getAllStudentsInMyCourse(): Array<Student>{
+        return this._course.studentList;
+    }
+
+    addNewStudentToMyCourse(student :Student): void {
+        this._course.studentList.push(student)
+    }
+
+    removeStudentFromMyCourse(student: Student): void {
+        let studentArray: Array<Student> = this._course.studentList;
+            let index: number = studentArray.indexOf(student, 0);
+        if (index > -1) {
+            studentArray.splice(index, 1);
+        }
+    }
+
+    giveGradeToStudentForMycourse(student: Student, gradeValue: Grade): void{
+
+    }
+
+
 
 
 }
