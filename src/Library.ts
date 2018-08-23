@@ -26,4 +26,13 @@ class Library {
         itemContainer.innerHTML="";
         this.items.forEach(movie => movie.render(itemContainer))
     }
+
+    addBook(): void{
+        let author: Author = new Author("Nick")
+        let book: Book = new Book("default", author, "default", "default")
+        this.items.push(book);
+        let itemContainer: HTMLElement = document.getElementById("items");
+        itemContainer.innerHTML="";
+        this.items.forEach(book => book.render(itemContainer))
+    }
 }

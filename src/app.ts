@@ -10,6 +10,9 @@ jsonParser.getJSON("http://localhost:8080/db", data => {
 });
 
 
-let btn = document.getElementById("add-movie-button");
-btn.addEventListener("click", (e: Event) => this.lib.addMovie())
+let addMovieButton = document.getElementById("add-movie-button");
+addMovieButton.addEventListener("click", (e: Event) => this.lib.addMovie())
+
+let addBookButton = document.getElementById("add-book-button");
+addBookButton.addEventListener("click", (e: Event) => this.lib.addBook())
 

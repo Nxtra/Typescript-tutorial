@@ -21,6 +21,14 @@ var Library = /** @class */ (function () {
         itemContainer.innerHTML = "";
         this.items.forEach(function (movie) { return movie.render(itemContainer); });
     };
+    Library.prototype.addBook = function () {
+        var author = new Author("Nick");
+        var book = new Book("default", author, "default", "default");
+        this.items.push(book);
+        var itemContainer = document.getElementById("items");
+        itemContainer.innerHTML = "";
+        this.items.forEach(function (book) { return book.render(itemContainer); });
+    };
     return Library;
 }());
 //# sourceMappingURL=Library.js.map
