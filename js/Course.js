@@ -1,8 +1,9 @@
 var Course = /** @class */ (function () {
-    function Course(courseName, teacher) {
+    function Course(courseName, teacher, studentList) {
         this._studentList = [];
         this._courseName = courseName;
         this._teacher = teacher;
+        this._studentList = studentList;
     }
     Object.defineProperty(Course.prototype, "teacher", {
         get: function () {

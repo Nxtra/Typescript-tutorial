@@ -3,13 +3,13 @@ var Service = /** @class */ (function () {
         this.kevinAB = new Teacher("Kevin", 1);
         this.ydt = new Teacher("YanDT", 2);
         this.teacherList = [this.kevinAB, this.ydt];
-        this.typeScriptCourse = new Course("Math", this.kevinAB);
-        this.javaCourse = new Course("Java", this.ydt);
-        this.courseList = [this.typeScriptCourse, this.javaCourse];
         this.nickStudent = new Student("Nick", 1);
         this.michaelStudent = new Student("Michael", 2);
         this.shadiStudent = new Student("Shadi", 3);
         this.studentList = [this.nickStudent, this.michaelStudent, this.shadiStudent];
+        this.typeScriptCourse = new Course("TypeScript", this.kevinAB, [this.nickStudent, this.shadiStudent]);
+        this.javaCourse = new Course("Java", this.ydt, [this.nickStudent, this.michaelStudent]);
+        this.courseList = [this.typeScriptCourse, this.javaCourse];
         this.gradeNickJava = new Grade(10, this.javaCourse, this.nickStudent);
         this.gradeNickTypeScript = new Grade(10, this.typeScriptCourse, this.nickStudent);
         this.gradeMichaelJava = new Grade(10, this.javaCourse, this.michaelStudent);
@@ -30,6 +30,7 @@ var Service = /** @class */ (function () {
         console.log(this.gradeList);
     };
     Service.prototype.addStudent = function (student) {
+        console.log("adding student: " + student);
         this.studentList.push(student);
         console.log(this.studentList);
     };
@@ -47,10 +48,11 @@ var Service = /** @class */ (function () {
         console.log(grades);
         return grades;
     };
-    Service.prototype.updateGradeForStudentAndCourse = function (student, course, newStudent) {
-        var studentToUpdate = this.gradeList.filter(function (grade) { return grade.student == student
-            && grade.course == course; })[0].student;
-        studentToUpdate = newStudent;
+    Service.prototype.updateGradeForStudentAndCourse = function (student, course, newGrade) {
+        var grade = this.gradeList.filter(function (grade) { return grade.student == student
+            && grade.course == course; })[0];
+        console.log(grade);
+        grade = newGrade;
     };
     return Service;
 }());

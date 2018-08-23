@@ -8,14 +8,15 @@ class Service {
     ydt: Teacher = new Teacher("YanDT", 2);
     teacherList: Array<Teacher> = [this.kevinAB, this.ydt];
 
-    typeScriptCourse: Course = new Course("Math", this.kevinAB);
-    javaCourse: Course = new Course("Java", this.ydt);
-    courseList: Array<Course> = [this.typeScriptCourse, this.javaCourse];
-
     nickStudent: Student = new Student("Nick", 1);
     michaelStudent: Student = new Student("Michael", 2);
     shadiStudent: Student = new Student("Shadi", 3);
     studentList: Array<Student> = [this.nickStudent, this.michaelStudent, this.shadiStudent];
+
+    typeScriptCourse: Course = new Course("TypeScript", this.kevinAB, [this.nickStudent, this.shadiStudent]);
+    javaCourse: Course = new Course("Java", this.ydt, [this.nickStudent, this.michaelStudent]);
+    courseList: Array<Course> = [this.typeScriptCourse, this.javaCourse];
+
 
     gradeNickJava: Grade = new Grade(10, this.javaCourse,this.nickStudent);
     gradeNickTypeScript: Grade = new Grade(10, this.typeScriptCourse, this.nickStudent);
@@ -41,6 +42,7 @@ class Service {
     }
 
     addStudent(student: Student): void{
+        console.log("adding student: " + student);
         this.studentList.push(student);
         console.log(this.studentList);
     }
@@ -62,10 +64,11 @@ class Service {
         return grades;
     }
 
-    updateGradeForStudentAndCourse(student: Student, course: Course, newStudent: Student): void{
-        let studentToUpdate: Student = this.gradeList.filter(grade => grade.student == student
-            && grade.course == course)[0].student;
-        studentToUpdate = newStudent;
+    updateGradeForStudentAndCourse(student: Student, course: Course, newGrade: Grade): void{
+        let grade: Grade = this.gradeList.filter(grade => grade.student == student
+            && grade.course == course)[0];
+        console.log(grade);
+        grade = newGrade;
     }
 
 
