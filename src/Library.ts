@@ -20,7 +20,7 @@ class Library {
     }
 
     addMovie(): void{
-        let movie:  Movie = new Movie("default","default","default", 1,"default")
+        let movie:  Movie = new Movie("default Movie","default","default", 1,"default")
         this.items.push(movie);
         let itemContainer: HTMLElement = document.getElementById("items");
         itemContainer.innerHTML="";
@@ -29,7 +29,7 @@ class Library {
 
     addBook(): void{
         let author: Author = new Author("Nick")
-        let book: Book = new Book("default", author, "default", "default")
+        let book: Book = new Book("default Book", author, "default", "default")
         this.items.push(book);
         let itemContainer: HTMLElement = document.getElementById("items");
         itemContainer.innerHTML="";

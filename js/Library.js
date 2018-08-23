@@ -15,7 +15,7 @@ var Library = /** @class */ (function () {
         return this.items;
     };
     Library.prototype.addMovie = function () {
-        var movie = new Movie("default", "default", "default", 1, "default");
+        var movie = new Movie("default Movie", "default", "default", 1, "default");
         this.items.push(movie);
         var itemContainer = document.getElementById("items");
         itemContainer.innerHTML = "";
@@ -23,7 +23,7 @@ var Library = /** @class */ (function () {
     };
     Library.prototype.addBook = function () {
         var author = new Author("Nick");
-        var book = new Book("default", author, "default", "default");
+        var book = new Book("default Book", author, "default", "default");
         this.items.push(book);
         var itemContainer = document.getElementById("items");
         itemContainer.innerHTML = "";
