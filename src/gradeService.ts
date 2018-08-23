@@ -6,8 +6,9 @@ class GradeService extends EntityService<Grade>{
         }
     }
 
-    getStudentWithHighestGrade(course:Course):Student{
+    getStudentWithHighestGrade(course:Course){
+        let studentGrade = document.getElementById("studentGrade");
         let grades = this.getAll().filter(grade => grade.course.name === course.name);
-        return grades.sort((a,b) => b.points - a.points)[0].student;
+        studentGrade.innerHTML = grades.sort((a,b) => b.points - a.points)[0].student.name;
     }
 }

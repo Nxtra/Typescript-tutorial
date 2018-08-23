@@ -26,10 +26,67 @@ studentService.add(studentEric);
 studentService.add(studentAdam);
 studentService.add(studentJeff);
 
+let teacherService = new TeacherService();
+teacherService.add(maria);
+teacherService.add(erwin);
+
+
+
 gradeService.addWithConstraintCheck(erwin,new Grade(8,wiskunde,studentAdam));
 
-console.log(courseService.lookupStudentsInCourse(nederlands));
+let select = document.getElementById("optionsCourses");
+let options = courseService.getAll();
 
-console.log(gradeService.getStudentWithHighestGrade(nederlands));
+for(let i = 0; i < options.length; i++) {
+    let opt = options[i];
+    let el = document.createElement("option");
+    el.id =  i.toString();
+    el.value = opt.name;
+    el.textContent = opt.name;
+    select.appendChild(el);
+}​
 
-console.log(courseService.sortStudentsInCourse(nederlands));
+
+
+let secondSelect = document.getElementById("optionsTeachers");
+let secondOptions = teacherService.getAll();
+
+for(let i = 0; i < secondOptions.length; i++) {
+    let secOpt = secondOptions[i];
+    let secEl = document.createElement("option");
+    secEl.id =  i.toString();
+    secEl.value = secOpt.name;
+    secEl.textContent = secOpt.name;
+    secondSelect.appendChild(secEl);
+}​
+
+function getSelectedCourse(){
+    let course = document.getElementById("optionsCourses");
+    let name = course.options[course.selectedIndex].value;
+    return courseService.getAll().filter(course => course.name === name)[0];
+}
+
+
+function getSelectedTeacher(){
+    let teacher = document.getElementById("optionsTeachers");
+    let students = document.getElementById("students");
+    while (students.firstChild) {
+        students.removeChild(students.firstChild);
+    }
+    return teacher.options[teacher.selectedIndex].value;
+}
+
+function getStudentsOfTeacher(name:string){
+    let container = document.getElementById("students");
+
+    let students: Array<Student> = courseService.getCourseOfTeacher(name).students;
+
+    for(let i = 0; i < students.length; i++) {
+        let thirdOpt = students[i];
+        let thirdEl = document.createElement("li");
+        thirdEl.id = i.toString();
+        thirdEl.textContent = thirdOpt.name;
+        container.appendChild(thirdEl);
+    }
+
+}

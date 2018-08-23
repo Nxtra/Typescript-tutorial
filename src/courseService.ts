@@ -15,4 +15,8 @@ class CourseService extends EntityService<Course>{
     removeStudent(course:Course, index:number){
         course.students.slice(index)
     }
+
+    getCourseOfTeacher(teacherName:string): Course{
+        return courseService.getAll().filter(course => course.teacher.name === teacherName)[0];
+    }
 }
