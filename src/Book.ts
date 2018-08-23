@@ -5,14 +5,12 @@ class Book extends Item {
         super(title,genre,description)
         this.author = author;
     }
-    render(element: HTMLElement):void {
-        let article: HTMLElement = document.createElement("article");
-        article.innerHTML =
-            "<h3>" + this.title + "</h3>" +
-            "<h4>" + this.author.name + "</h4>" +
-            "<p>" + this.genre + "</p>" +
-            "<span>" + this.description + "</span>";
 
-        element.appendChild(article);
+
+    render(element: HTMLElement) {
+        let item: HTMLElement = document.createElement("item");
+        item.innerHTML = `<h2>${this.title}</h2><h2>${this.author.name}</h2><h2>${this.genre}</h2><h2>${this.description}</h2>`;
+        element.appendChild(item);
+
     }
 }

@@ -20,9 +20,9 @@ var Movie = /** @class */ (function (_super) {
         return _this;
     }
     Movie.prototype.render = function (element) {
-        var article = document.createElement("article");
-        article.innerHTML = "<h2>" + this.name + "</h2><h2>" + this.age + "</h2><h2>" + this.genre + "</h2><h2>" + this.description + "</h2>";
-        element.appendChild(article);
+        var item = document.createElement("item");
+        item.innerHTML = "<h2>" + this.name + "</h2><h2>" + this.age + "</h2><h2>" + this.genre + "</h2><h2>" + this.description + "</h2>";
+        element.appendChild(item);
     };
     return Movie;
 }(Item));

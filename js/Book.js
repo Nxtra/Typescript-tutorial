@@ -19,13 +19,9 @@ var Book = /** @class */ (function (_super) {
         return _this;
     }
     Book.prototype.render = function (element) {
-        var article = document.createElement("article");
-        article.innerHTML =
-            "<h3>" + this.title + "</h3>" +
-                "<h4>" + this.author.name + "</h4>" +
-                "<p>" + this.genre + "</p>" +
-                "<span>" + this.description + "</span>";
-        element.appendChild(article);
+        var item = document.createElement("item");
+        item.innerHTML = "<h2>" + this.title + "</h2><h2>" + this.author.name + "</h2><h2>" + this.genre + "</h2><h2>" + this.description + "</h2>";
+        element.appendChild(item);
     };
     return Book;
 }(Item));

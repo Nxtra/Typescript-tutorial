@@ -9,9 +9,9 @@ class Movie extends Item implements Rating{
     }
 
     render(element: HTMLElement) {
-        let article: HTMLElement = document.createElement("article");
-        article.innerHTML = `<h2>${this.name}</h2><h2>${this.age}</h2><h2>${this.genre}</h2><h2>${this.description}</h2>`;
-        element.appendChild(article);
+        let item: HTMLElement = document.createElement("item");
+        item.innerHTML = `<h2>${this.name}</h2><h2>${this.age}</h2><h2>${this.genre}</h2><h2>${this.description}</h2>`;
+        element.appendChild(item);
 
     }
 
