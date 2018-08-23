@@ -11,10 +11,11 @@ var Library = /** @class */ (function () {
         return new Library(books, movies);
     };
     Library.prototype.getBooksAndMovies = function () {
-        var allItems = [];
-        allItems.concat(this.books);
-        allItems.concat(this.movies);
-        return allItems;
+        var items = [];
+        this.books.forEach(function (book) { return items.push(book); });
+        this.movies.forEach(function (movie) { return items.push(movie); });
+        //let items = (<Item[]>this.books).concat(this.movies);
+        return items;
     };
     return Library;
 }());

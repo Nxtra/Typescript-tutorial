@@ -28,7 +28,7 @@ var Book = /** @class */ (function (_super) {
         element.appendChild(article);
     };
     Book.fromJson = function (json) {
-        return new Book(json.title, json.author, json.genre, json.description);
+        return new Book(json.title, new Author(json.author), json.genre, json.description);
     };
     return Book;
 }(Item));

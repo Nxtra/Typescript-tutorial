@@ -14,7 +14,7 @@ The recommended way to run this container looks like this:
 
 ```bash
 $ docker run -d -p 8000:80 -v /home/user/articles.json:/data/db.json clue/json-server  
-$ docker run -d -p 8080:80 -v /Users/nivh/Training/TypeScript/Ordina-JWorks-TypeScript/items.json:/data/db.json clue/json-server
+$ docker run -d -p 8090:80 -v /Users/nivh/Training/TypeScript/Ordina-JWorks-TypeScript/items.json:/data/db.json clue/json-server
 
 ```
 

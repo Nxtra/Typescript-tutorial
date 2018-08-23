@@ -6,6 +6,7 @@ class Book extends Item {
         super(title,genre,description)
         this.author = author;
     }
+
     render(element: HTMLElement):void {
         let article: HTMLElement = document.createElement("article");
         article.innerHTML =
@@ -18,7 +19,7 @@ class Book extends Item {
     }
 
     static fromJson(json: any): Book {
-        return new Book(json.title, json.author, json.genre, json.description);
+        return new Book(json.title, new Author(json.author), json.genre, json.description);
     }
 
 

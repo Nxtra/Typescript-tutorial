@@ -28,7 +28,7 @@ var Movie = /** @class */ (function (_super) {
         element.appendChild(article);
     };
     Movie.fromJson = function (json) {
-        return new Movie(json.title, json.genre, json.description, json.age, json.number);
+        return new Movie(json.title, json.genre, json.description, json.age, json.name);
     };
     return Movie;
 }(Item));

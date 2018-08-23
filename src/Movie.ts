@@ -24,6 +24,6 @@ class Movie extends Item implements Rating{
     }
 
     static fromJson(json: any): Movie {
-        return new Movie(json.title, json.genre, json.description, json.age, json.number);
+        return new Movie(json.title, json.genre, json.description, json.age, json.name);
     }
 }

@@ -1,4 +1,6 @@
 class Library {
+
+
     public books: Array<Book> = [];
     public movies: Array<Movie> = [];
 
@@ -15,11 +17,13 @@ class Library {
         return new Library(books, movies)
     }
 
-    getBooksAndMovies(): Array<Item>{
-        let allItems: Array<Item> = [];
-        allItems.concat(this.books);
-        allItems.concat(this.movies);
-        return allItems;
+    getBooksAndMovies(): Array<Item> {
+        let items: Array<Item> = [];
+        this.books.forEach(book => items.push(book));
+        this.movies.forEach(movie => items.push(movie));
+
+        //let items = (<Item[]>this.books).concat(this.movies);
+        return items;
     }
 
 
