@@ -5,7 +5,6 @@ Be sure to use some logging in the process.
 The students have a set of courses they follow.
 For each course, the students gets grades.
 
-The teachers has a set of students.
 Both have a similar model but differentiate.
 * Create me both a Student and Teacher class and apply the OCP pattern to it.
 
@@ -13,11 +12,15 @@ Both have a similar model but differentiate.
 * Create a course class
 * Name it
 * Link a teacher to it
+* Link a list of students
 * Make a service class to apply CRUD operations on Course
 
-# The Student Class 
-* Link to a set of courses
-* Make a service class to apply CRUD operations on Student
+# The Grade Class
+* Create a grade class
+* Add points attribute
+* link to course 
+* link to student
+* Make a service class to apply CRUD operations on Grade
 
 # Bonus: Make the service generic
 
