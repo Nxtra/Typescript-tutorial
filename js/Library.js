@@ -1,13 +1,18 @@
 var Library = /** @class */ (function () {
     function Library(books, movies) {
-        this.books = [];
-        this.movies = [];
+        this.books = new Array();
+        this.movies = new Array();
         this.books = books;
         this.movies = movies;
     }
     Library.fromJSON = function (data) {
+        var movies = new Array();
+        for (var _i = 0, _a = data.movies; _i < _a.length; _i++) {
+            var movie = _a[_i];
+            movies.push(Movie.fromJson(movie));
+        }
         var books = data.books.map(function (book) { return Book.fromJson(book); });
-        var movies = data.movies.map(function (movie) { return Movie.fromJson(movie); });
+        //let movies:Array<Movie> = data.movies.map(movie => Movie.fromJson(movie));
         return new Library(books, movies);
     };
     Library.prototype.getBooksAndMovies = function () {
